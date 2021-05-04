@@ -62,55 +62,55 @@ const currentTotalBalance = function () {
 };
 
 // Function that check if balance is Zero
-  const checkZero = function () {
+const checkZero = function () {
 
-    if (checkingBalance === 0) { // check for checking account
-      $('#checking-balance').addClass('zero');
-    } else {
-      $('#checking-balance').removeClass('zero');
-    };
+  if (checkingBalance === 0) { // check for checking account
+    $('#checking-balance').addClass('zero');
+  } else {
+    $('#checking-balance').removeClass('zero');
+  };
 
-    if (savingsBalance === 0) { // check for savings account
-      $('#savings-balance').addClass('zero');
-    } else {
-      $('#savings-balance').removeClass('zero');
-    };
+  if (savingsBalance === 0) { // check for savings account
+    $('#savings-balance').addClass('zero');
+  } else {
+    $('#savings-balance').removeClass('zero');
+  };
 
-  }
+}
 
   // Function to log the account balance
 
-  const logAccountBalance = function (account) {
+const logAccountBalance = function (account) {
 
-    if (account === "checking") {
-      $('#checking-balance').html('$' + checkingBalance);
+  if (account === "checking") {
+    $('#checking-balance').html('$' + checkingBalance);
 
-    } else if (account === "savings") {
-      $('#savings-balance').html('$' + savingsBalance);
-    }
-
+  } else if (account === "savings") {
+    $('#savings-balance').html('$' + savingsBalance);
   }
+
+}
 
   // overdraft functions
 
-  const overdraftFunction = function (account, amount) {
-    let overdraft = 0;
+const overdraftFunction = function (account, amount) {
+  let overdraft = 0;
 
-    if (account === "checking") {
-      overdraft = parseInt(amount) - checkingBalance;
-      checkingBalance = 0;
-      savingsBalance -= overdraft;
+  if (account === "checking") {
+    overdraft = parseInt(amount) - checkingBalance;
+    checkingBalance = 0;
+    savingsBalance -= overdraft;
 
-    } else if (account === "savings") {
-      overdraft = parseInt(amount) - savingsBalance;
-      savingsBalance = 0;
-      checkingBalance -= overdraft;
-    }
+  } else if (account === "savings") {
+    overdraft = parseInt(amount) - savingsBalance;
+    savingsBalance = 0;
+    checkingBalance -= overdraft;
+  }
 
-      logAccountBalance("checking");
-      logAccountBalance("savings");
+    logAccountBalance("checking");
+    logAccountBalance("savings");
 
-  };
+};
 
   // Function to reset the input form after submitting
 
@@ -143,7 +143,7 @@ $(document).ready( function () {
     currentTotalBalance();
     checkZero();
 
-  })
+  });
 
 // ------------ withdraw button
 
@@ -161,7 +161,7 @@ $(document).ready( function () {
     currentTotalBalance();
     checkZero();
 
-  })
+  });
 
 
   // SAVINGS BOX --------------------------------------------
@@ -199,7 +199,7 @@ $(document).ready( function () {
     checkZero();
 
   })
-
+});
 
 
 // const render = function () {

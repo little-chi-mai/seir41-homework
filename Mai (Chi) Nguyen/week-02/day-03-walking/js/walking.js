@@ -81,35 +81,47 @@ setTimeout(delayDog3, 6500);
 let dir = true;
 
 const walk3 = function () {
+  // console.log(img3.style.left);
   let oldLeft = parseInt(img3.style.left);
+  // console.log(oldLeft);
+  
+  
+  let newLeft = oldLeft + 2;
+  img3.style.left = newLeft + 'px';
 
-  if (oldLeft !== 0) {
-    if (oldLeft !== 1200) {
-      if (dir === true) {
-        let newLeft = oldLeft + 2;
-        img3.style.left = newLeft + 'px';
-      } else {
-        let newLeft = oldLeft - 2;
-        img3.style.left = newLeft + 'px';
-      }
-    } else if (oldLeft === 1200) {
-      if (dir === true) {
-        img3.style.transform = 'scaleX(-1)';
-        dir = false;
-      } else {
-      let newLeft = oldLeft - 2;
-      img3.style.left = newLeft + 'px';
-      }
-    }
-  } else {
-    if (dir === false) {
-      img3.style.transform = 'scaleX(+1)';
-      dir = true;
-    } else {
-      let newLeft = oldLeft + 2;
-      img3.style.left = newLeft + 'px';
-    }
-  }
+  // if (img3.style.left === 1200) {
+  //   img3.style.transform = 'scaleX(-1)';
+  //   newLeft = oldLeft - 2;
+  //   console.log('reached');
+  // }
+
+  // if (oldLeft !== 0) {
+  //   if (oldLeft !== 1200) {
+  //     if (dir === true) {
+  //       let newLeft = oldLeft + 2;
+  //       img3.style.left = newLeft + 'px';
+  //     } else {
+  //       let newLeft = oldLeft - 2;
+  //       img3.style.left = newLeft + 'px';
+  //     }
+  //   } else if (oldLeft === 1200) {
+  //     if (dir === true) {
+  //       img3.style.transform = 'scaleX(-1)';
+  //       dir = false;
+  //     } else {
+  //     let newLeft = oldLeft - 2;
+  //     img3.style.left = newLeft + 'px';
+  //     }
+  //   }
+  // } else {
+  //   if (dir === false) {
+  //     img3.style.transform = 'scaleX(+1)';
+  //     dir = true;
+  //   } else {
+  //     let newLeft = oldLeft + 2;
+  //     img3.style.left = newLeft + 'px';
+  //   }
+  // }
 
 }
 
